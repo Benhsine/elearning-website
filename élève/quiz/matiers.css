@@ -1,0 +1,79 @@
+body
+{
+    position: relative;
+    background-image: url(rR.jpg);
+    background-repeat: no-repeat;
+    
+}
+h1
+{
+    position: relative;
+    top: 65px;
+    margin-left:80px;
+}
+.examicone
+{
+    position: relative;
+    width: 50px;
+    margin-left:20px;
+}
+.matiers
+{
+    position: relative;
+    top: 5px;
+    margin-left:360px;
+}
+.matiersicon
+{
+    position: relative;
+    top: -50px;
+    width: 50px;
+    margin-left:300px;
+}
+.engicon
+{
+    position: relative;
+    top: -375px;
+    width: 50px;
+    margin-left:800px;
+}
+.eng
+{
+    position: relative;
+    top: -320px;
+    margin-left:860px;
+}
+.ama
+{
+    position: relative;
+    top: -290px;
+    margin-left:860px;
+}
+/* Couleur par défaut des liens non visités */
+a:link {
+    color: rgb(234, 0, 255);
+}
+
+/* Couleur des liens visités */
+a:visited {
+    color: rgb(75, 207, 49);
+}
+
+/* Couleur au survol des liens */
+a:hover {
+    color: red;
+}
+
+/* Couleur lors du clic sur les liens */
+a:active {
+    color: green;
+}
+
+.end
+{
+    position: relative;
+    color:rgb(0, 217, 255);
+    top:-280px;
+    font-size: 15px;
+    text-align: center;
+}
