@@ -60,7 +60,7 @@
                 <ul class="table">
                     <li><a href="profil.php" target="profil">PROFIL</a></li>
                     <li><a href="voir_cours.php" target="profil">DOCUMENT</a></li>
-                    <li><a href="vedios.html" target="profil">VEDIOS</a></li>
+                    <li><a href="voir_videos.php" target="profil">VEDIOS</a></li>
                     <li><a href="exercice.html" target="profil">EXERCICES</a></li>
                     <li><a href="quiz/matiers.php" target="profil">QUIZ</a></li>
                     <li><a href="https://www.logicieleducatif.fr/" target="profil">ACTIVITES</a></li>

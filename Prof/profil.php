@@ -12,6 +12,13 @@ if (!isset($_SESSION['id']) || !isset($_SESSION['email'])) {
 // Récupérer les informations de l'étudiant depuis la session
 $nom = $_SESSION['nom'];
 $prenom = $_SESSION['prenom'];
+$dsn = 'mysql:host=localhost;dbname=bd_elearning';
+$utilisateur = 'root';
+$motDePasse = '';
+$connexion = new PDO($dsn, $utilisateur, $motDePasse);
+$query= "select * from etudient" ;
+$LesEtudiant=$connexion->prepare($query);
+$LesEtudiant->execute();
 ?>
 <!DOCTYPE html>
 <html>
@@ -23,6 +30,15 @@ $prenom = $_SESSION['prenom'];
 <body>
   <h2>Bienvenue, <?php echo $prenom . ' ' . $nom; ?> !</h2>
   <p>Vous êtes connecté au tableau de bord des professeurs.</p><br>
+  <form method="POST">
+  <input type="submit" name="button" value="voir mes etudiants">
+  </form>
+  <?php 
+  if (isset($_POST["button"])){
+  foreach ($LesEtudiant as $etudient ){
+    echo "- NOM : ".$etudient['nom']." PRENOM :".$etudient['prenom']." AGE :".$etudient['age']."<br>";
+  } }
+  ?>
   <!-- Reste du contenu de la page -->
 </body>
 </html>

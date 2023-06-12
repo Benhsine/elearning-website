@@ -144,7 +144,7 @@ try {
 
   if ($statement->fetchColumn() > 0) {
   // L'utilisateur existe déjà, afficher un message d'erreur
-    echo 'Cet email est déjà utilisé. Veuillez choisir un autre email.';
+    echo '<div class= avatar> </div>Cet email est déjà utilisé. Veuillez choisir un autre email. </br></br>';
   } else {
   
   // Préparation de la requête d'insertion
@@ -163,8 +163,7 @@ try {
   
   // Exécution de la requête
   if ($statement->execute()) {
-    echo 'Inscription réussie !';
-    echo '<a href="connexion_prof.html">Se connecter</a>';
+    echo '<div class= avatar> </div> Inscription réussie ! <a href="connexion_prof.html"> <b>Se connecter</b></a> </br></br>';
   } else {
     echo 'Erreur lors de l\'inscription';
   }

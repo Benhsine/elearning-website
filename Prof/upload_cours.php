@@ -18,7 +18,30 @@ echo 'fichier uploaded avec succes';
   echo 'fichier not uploaded';
 }
 }
+if (isset($_GET['delete']) ) {
+  $docId = $_GET['delete'];
+  $deletedoc = $database->prepare("DELETE FROM cours WHERE id = :id");
+  $deletedoc->bindParam(":id", $docId);
+  if ($deletedoc->execute()) {
+      echo "document supprimée avec succès.";
+  } else {
+      echo "Erreur lors de la suppression de la document.";
+  }
+}
+$getdoc = $database->prepare("SELECT * FROM cours");
+$getdoc->execute();
+$docs = $getdoc->fetchAll(PDO::FETCH_ASSOC);
 ?>
+<h2>Mes documents</h2>
+<ul>
+    <?php foreach ($docs as $doc) : ?>
+        <li>
+            <?php echo $doc['nom_cour']; ?>
+            <a href="?delete=<?php echo $doc['id_cour']; ?>" onclick="return confirm('Êtes-vous sûr de vouloir supprimer cet document ?')">Supprimer</a>
+            <br>
+        </li>
+    <?php endforeach; ?>
+</ul>
 
 <form method="POST" enctype="multipart/form-data">
 <input type="file" name="cour" accept="application/pdf" required/>
